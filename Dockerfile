@@ -2,6 +2,7 @@ FROM amazonlinux:latest
 
 RUN yum update -y
 RUN yum groupinstall 'Development Tools' -y
+RUN yum install python -y #fix RPM node package complaining about python version
 RUN curl -O https://rpm.nodesource.com/pub_8.x/el/7/x86_64/nodejs-8.10.0-1nodesource.x86_64.rpm
 RUN rpm -i --nosignature --force nodejs-8.10.0-1nodesource.x86_64.rpm
 RUN curl -O https://bootstrap.pypa.io/get-pip.py
